@@ -1,0 +1,2 @@
+#define INCREMENT_BUILD_NUM TRUE
+#define BUILD_NUM 4

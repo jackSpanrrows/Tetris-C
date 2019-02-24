@@ -1,0 +1,34 @@
+[Project]
+FileName=D:\www\project_c\俄罗斯方块\俄罗斯方块.dev
+Name=俄罗斯方块
+Ver=2
+IsCpp=1
+Type=1
+Compiler=-D__GNUWIN32__ -W -DWIN32 -DNDEBUG -D_CONSOLE -D_MBCS 
+CppCompiler=-D__GNUWIN32__ -W -DWIN32 -DNDEBUG -D_CONSOLE -D_MBCS 
+Includes=
+Linker=-lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lodbc32 -lodbccp32 -lkernel32 -luser32 -lgdi32 -lwinspool -lcomdlg32 -ladvapi32 -lshell32 -lole32 -loleaut32 -luuid -lodbc32 -lodbccp32 
+Libs=
+UnitCount=3
+Folders="Source Files","Header Files","Resource Files"
+[Unit1]
+FileName=./main.c
+Folder="Source Files"
+Compile=1
+CompileCpp=0
+Link=1
+Priority=1000
+[Unit2]
+FileName=./conio.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
+[Unit3]
+FileName=./constant.h
+Folder="Header Files"
+Compile=1
+CompileCpp=1
+Link=1
+Priority=1000
