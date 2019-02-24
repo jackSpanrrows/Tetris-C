@@ -1,9 +1,9 @@
 /**
-  main.c
-  eluosifkuai
-@Author Created by cfu on 2019/2/10.
-@Copyright 2019 cheng.fu. All rights reserved.
-**/
+ *@FileName: main.c
+ *@ProjectName: 俄罗斯方块 
+ *@Author Created by jackSpanrrows on 2019/2/10.
+ *@Copyright 2019 jackSpanrrows All rights reserved.
+ **/
 
 #include <stdio.h>
 #include <conio.h>
@@ -13,12 +13,7 @@
 #include "constant.h"
 
 //定义常量库
-//#include <constant.h>
 
-//#include <cstdlib.h>
-//#include <cstdio>
-//#include <iostream>
-//using namespace std;
 
 int i, j, Temp, Temp1, Temp2;
 int a[80][80] = {0};
@@ -571,8 +566,7 @@ void Flag(struct Tetris *tetris) {
  */
 void Del_Fullline(struct Tetris *tetris) {
 	int k,del_rows=0;
-	for(j=FrameY+Frame_height-1; j>=FrameY+1; j--) 
-	{
+	for(j=FrameY+Frame_height-1; j>=FrameY+1; j--) {
 		k = 0;
 		for(i=FrameX+2; i<FrameX+2*Frame_width-2; i+=2) {
 			if(a[i][j] == 1) {
