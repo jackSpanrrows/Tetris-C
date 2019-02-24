@@ -312,7 +312,7 @@ void DrwaGameframe() {
 	for(i=1; i<Frame_height; i++) {
 		gotoxy(FrameX+2 * Frame_width-2,FrameY+i);
 		printf("☆");
-		a[FrameX+2*Frame_width-3][FrameY+i] = 2;
+		a[FrameX+2*Frame_width-2][FrameY+i] = 2;
 	}
 
 //	color(14);
@@ -324,7 +324,7 @@ void MakeTetris(struct Tetris *tetris) {
 	switch(tetris->flag) {
 		case 1: { /**田方块**/
 			color(10);
-			a[tetris->x][tetris->y] = b[1];
+			a[tetris->x][tetris->y-1] = b[1];
 			a[tetris->x+2][tetris->y-1] = b[2];
 			a[tetris->x+2][tetris->y] = b[3];
 			break;
@@ -332,8 +332,8 @@ void MakeTetris(struct Tetris *tetris) {
 		case 2: { /**水平直线方块**/
 			color(13);
 			a[tetris->x-2][tetris->y] = b[1];
-			a[tetris->x+2][tetris->y-1] = b[2];
-			a[tetris->x+2][tetris->y] = b[3];
+			a[tetris->x+2][tetris->y] = b[2];
+			a[tetris->x+4][tetris->y] = b[3];
 			break;
 		}
 		case 3: { /**垂直直线方块**/
@@ -367,7 +367,7 @@ void MakeTetris(struct Tetris *tetris) {
 		case 7: {
 			color(11);
 			a[tetris->x][tetris->y-1] = b[1];
-			a[tetris->x-2][tetris->y] = b[2];
+			a[tetris->x][tetris->y+1] = b[2];
 			a[tetris->x+2][tetris->y] = b[3];
 			break;
 		}
@@ -381,7 +381,7 @@ void MakeTetris(struct Tetris *tetris) {
 		case 9: {
 			color(14);
 			a[tetris->x][tetris->y-1] = b[1];
-			a[tetris->x][tetris->y] = b[2];
+			a[tetris->x-2][tetris->y] = b[2];
 			a[tetris->x-2][tetris->y+1] = b[3];
 			break;
 		}
@@ -396,14 +396,14 @@ void MakeTetris(struct Tetris *tetris) {
 			color(14);
 			a[tetris->x][tetris->y+1] = b[1];
 			a[tetris->x-2][tetris->y-1] = b[2];
-			a[tetris->x+2][tetris->y] = b[3];
+			a[tetris->x-2][tetris->y] = b[3];
 			break;
 		}
 		case 12: {
 			color(14);
 			a[tetris->x][tetris->y-1] = b[1];
 			a[tetris->x][tetris->y+1] = b[2];
-			a[tetris->x+2][tetris->y-1] = b[3];
+			a[tetris->x-2][tetris->y-1] = b[3];
 			break;
 		}
 		case 13: {
@@ -429,9 +429,9 @@ void MakeTetris(struct Tetris *tetris) {
 		}
 		case 16: {
 			color(12);
-			a[tetris->x][tetris->y] = b[1];
+			a[tetris->x][tetris->y+1] = b[1];
 			a[tetris->x][tetris->y-1] = b[2];
-			a[tetris->x+2][tetris->y] = b[3];
+			a[tetris->x+2][tetris->y-1] = b[3];
 			break;
 		}
 		case 17: {
@@ -570,8 +570,10 @@ void Flag(struct Tetris *tetris) {
  * 判断是否满航，并删除满行的方块
  */
 void Del_Fullline(struct Tetris *tetris) {
-	int k=0,del_rows=0;
-	for(j=FrameY+Frame_height-1; j>=FrameY+1; j--) {
+	int k,del_rows=0;
+	for(j=FrameY+Frame_height-1; j>=FrameY+1; j--) 
+	{
+		k = 0;
 		for(i=FrameX+2; i<FrameX+2*Frame_width-2; i+=2) {
 			if(a[i][j] == 1) {
 				k++;
@@ -581,7 +583,7 @@ void Del_Fullline(struct Tetris *tetris) {
 						gotoxy(k,j);
 						printf("  ");
 					}
-					for(k=j-2; k>FrameY; k--) {
+					for(k=j-1; k>FrameY; k--) {
 						for(i=FrameX+2; i<FrameX+2*Frame_width-2; i+=2) {
 							if(a[i][k] == 1) {
 								a[i][k] = 0;
@@ -773,6 +775,7 @@ void explation() {
 		gotoxy(18, 7);
 		printf("tip1:玩家可以通过<- ->方向键来移动方块");
 		color(10);
+		gotoxy(18, 9);
 		printf("tip2:通过↑使方块旋转");
 		color(14);
 		gotoxy(18, 11);
