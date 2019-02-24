@@ -8,9 +8,9 @@ git clone https://github.com/jackSpanrrows/Tetris-C.git
 
 二、将项目导入到DevC++编辑器下
 
-![项目导入方法](http://static.imlaoa.com/Tetris-C/images/2.png)
+![项目导入方法](http://static.imlaoa.com/Tetris-C/images/8.png)
 
-![](http://static.imlaoa.com/Tetris-C/images/3.png)
+![选择文件](http://static.imlaoa.com/Tetris-C/images/3.png)
 
 ![项目结构示意图](http://static.imlaoa.com/Tetris-C/images/1.png)
 
