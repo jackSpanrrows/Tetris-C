@@ -18,7 +18,7 @@ git clone https://github.com/jackSpanrrows/Tetris-C.git
 
 ![开始界面](http://static.imlaoa.com/Tetris-C/images/4.png)
 
-![按键说明](http://static.imlaoa.com/Tetris-C/images/5.png)
+![按键说明](http://static.imlaoa.com/Tetris-C/images/8.png)
 
 ![游戏规则](http://static.imlaoa.com/Tetris-C/images/6.png)
 
